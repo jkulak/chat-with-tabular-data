@@ -1,0 +1,5 @@
+[isort]
+force-sort-within-sections = true
+force-single-line = true
+lines-between-types = 1
+lines-after-imports = 2

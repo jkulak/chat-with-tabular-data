@@ -1,0 +1,11 @@
+contractor_code - code used for identifying contractor
+type - ('ZOB' : 'liability', 'NAL' : 'claims')
+financial_settlement_type -
+account - account number
+owes - how much contractor owes in this settlement
+has how much contractor has paid,
+invoice_date - date of issuing invoice,
+how_many_days_overdue days difference between last_payment_date and payment_deadline,
+payment_deadline date - deadline for paying settlement ,
+last_payment_date day when settlement was paid,
+payment_method method of paying settlement

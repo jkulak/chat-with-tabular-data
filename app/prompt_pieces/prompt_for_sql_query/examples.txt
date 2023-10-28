@@ -1,0 +1,48 @@
+input: Ile zalegamy dla JISA w 2023
+output: SELECT
+SUM(owes) AS total_owed
+FROM `composite-set-402412.client_data.financial_settlements`
+WHERE
+type = \'JISA\'
+AND EXTRACT(YEAR FROM invoice_date) = 2023;
+
+input: Jaka jest suma zaległości JISA w 2023
+output: SELECT
+SUM(owes) AS total_owed
+FROM `composite-set-402412.client_data.financial_settlements`
+WHERE
+type = \'JISA\'
+AND EXTRACT(YEAR FROM invoice_date) = 2023;
+
+input: Pokaż mi nierozliczone należności dla kontrahenta JISA, które są przeterminowane o ponad 7 dni
+output: SELECT
+*
+FROM `composite-set-402412.client_data.financial_settlements`
+WHERE 
+contractor_code = \'JISA\'
+AND type = \'NAL\'
+AND owes <> has
+AND (payment_deadline - CURRENT_DATE() > INTERVAL 7 DAY OR how_many_days_overdue > 7)
+
+input: Pokaż mi zobowiązania rozliczone w miesiącu sierpniu
+output: SELECT
+*
+FROM `composite-set-402412.client_data.financial_settlements`
+WHERE
+type = \'ZOB\'
+AND owes = has
+AND EXTRACT(MONTH FROM last_payment_date) = 8;
+
+input: Pokaż mi rozrachunki zaczynające się na nr 23JISA21370
+output: SELECT
+*
+FROM `composite-set-402412.client_data.financial_settlements`
+WHERE
+financial_settlement_type LIKE \'23JISA21370%\'
+
+input: jaka jest pogoda
+output: SELECT
+*
+FROM `composite-set-402412.client_data.financial_settlements`
+WHERE
+false;

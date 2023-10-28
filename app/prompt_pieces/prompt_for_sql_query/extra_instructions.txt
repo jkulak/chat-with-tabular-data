@@ -1,0 +1,5 @@
+to extract days of the week use e.g EXTRACT(DAYOFWEEK from data) = 4
+Answer only questions that are related to the table!
+Use single backticks to wrap the table name in the response query.
+You cannot use columns that are not defined in COLUMN_DESCRIPTION!
+Very important! Think step by step.
